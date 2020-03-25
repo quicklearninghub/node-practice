@@ -1,0 +1,21 @@
+
+
+
+
+
+
+Node Inspector:
+--------------
+
+write debugapp.js code.
+
+Node inspector is GUI based debugger. 
+
+>npm install -g node-inspect
+
+Run Node Inspector
+>node --inspect debugapp.js
+
+
+
+ 

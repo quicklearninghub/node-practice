@@ -1,0 +1,24 @@
+//Module
+1. Module is a container for variables and functions  (private)
+2. module.exports is used to publicize variables and functions.
+3. we can have other modules added as dependency in current modules
+4. we can export anynymous functions and instance functions.
+5. exports is just a java script object (Static global object).
+
+6. In module create event and raise events so that other modules can listen to it.
+
+7. in MVC project  Model is module, controller is module and view is another module
+which can be independently developed and tested with Mocha unit testing frame with Karma 
+automation tool and integrate with Jenkins for continuous integration projects.
+
+------------------------------------------------------------
+
+To publish our module called container.js:
+---------------------------------------------
+1. create pakcage.json
+2. add dependencies and dev-dependencies
+3. set private:false
+4. add readme.txt for documentation
+4. npm publish
+---------------------------------------------------------
+

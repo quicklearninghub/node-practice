@@ -1,0 +1,89 @@
+//module is like a js file with functions reusable in other js files.
+
+//Level 1
+//container.js
+var greet=function(msg){
+    return "Hi!"+ msg;
+}
+module.exports=greet;
+
+//app.js
+const greet=require('./container');
+console.log(greet('Murthy'));
+
+//Level 2 : add more functions
+var greet=function(msg){
+    return "Hi!"+ msg;
+}
+var add=function(x,y){
+    return `x+y = ${x+y}`;
+}
+const PI=3.142;
+
+/*
+// bad practise
+module.exports=greet;
+module.exports=add;
+module.exports=PI;
+*/
+
+//Good practise
+module.exports={
+    greet:greet,
+    add:add,
+    PI:PI
+}
+
+//in app.js
+const stuff=require('./container');
+console.log(stuff.greet('Murthy'));
+console.log(stuff.add(10,20));
+console.log(stuff.PI)
+
+//working with instance function
+// instance function
+function DBUtil(constr){
+    this.constr=constr;
+    this.connect=()=>{
+        console.log(`Connected to database with ${this.constr}`)
+    }
+}
+
+module.exports={
+    greet:greet,
+    add:add,
+    PI:PI,
+    DBCon:DBUtil
+}
+
+//in app.js
+var con=new stuff.DBCon('http:localhost:master');
+con.connect();
+
+//Level 3: 
+//closure
+const Util=((args)=>{
+    var Square=(x)=>{
+        Log(`${x} is passed to square`);
+        return  x*x;
+    }
+    var Log=(msg)=>{
+        console.log(msg)
+    }
+    return {
+        Square:Square,
+       }
+})
+module.exports={
+    .....
+    Utility:Util
+}
+// in app.js
+console.log(stuff.Utility().Square(10));
+
+To publish this module to Github, add package.json to modules folder
+>npm init              and answer all questions
+
+observe package.json in the current folder . feel free to modify.
+add "private": false     (if true, then it is not publishable even accidentally)
+
