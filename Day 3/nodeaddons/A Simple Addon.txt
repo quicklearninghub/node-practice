@@ -1,0 +1,37 @@
+Building the Addon
+------------------
+Prerequisites
+Visual C++
+You must download and install Visual C++ 2010 Express - download link
+
+Python
+You must download and install Python 2.x - 
+download link  : https://www.python.org/downloads/
+
+NB: Python 3.x wont do. Version 2.7.3 is fine.
+
+Node.js
+
+Download node.js source code - http://nodejs.org/download/
+
+Run the vcbuild.bat file - this is a long process
+
+NB: You must have installed VC++ and Python already and the Python installation path must be in the PATH environment variable
+When the process finishes you should have node.lib into either Debug or Release directories
+Creating a VC++ Project
+Open Visual C++ and select File -> New -> Project -> Win32 Project
+In the wizard click Next, select DLL as application type and then Finish
+Writing the code
+Paste the code above in your project's main file (the one with the same name as your project)
+Referencing node.lib - you must either:
+At line 2 (#pragma comment(lib, "node")) specify the full path to your node.lib file
+Go to Project -> Properties -> Configuration Properties -> VC++ Directories -> Include Directories -> <Edit...> and add your node.lib location
+Including node.h and v8.h
+Similar to node.lib - follow the above steps
+node.h location: .\src\node.h (assuming you are in the node source folder)
+v8.h location: .\deps\v8\include\v8.h
+Building the addon
+Hit F7 - you should get a .dll file in your project's Debug directory
+Rename it as .node
+NB: You might want to go to Project -> Properties -> Configuration Properties -> General and set Target Extension to .node
+Try using the addon within node via require - when invoking the sayHi method, a message box should appear
