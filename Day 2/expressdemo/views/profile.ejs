@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background:orange;
+                font-family:verdhana;
+                color:black;
+                padding:40px;                
+            }
+            p{font-size:16px; text-align:center}
+            
+        </style>
+    </head>
+    <body>
+        <h1 style="background:yellow;color:darkblue;text-align:center">
+            Welcome to profile of Mr./Ms <%= person %>
+        </h1>
+        
+        <% include partials/nav.ejs %>
+
+        <p>Profile Management Dashboard</p><br/>
+        <h3> Age : <%= data.age %> -  Job : <%= data.job %></h3>
+        
+        <h3>Technologies mastered :</h3>
+        <ul>
+            <% data.technologies.forEach((item)=>{%>
+                  <li><%= item %></li>
+           <%   }); %>
+        </ul>
+    </body>
+</html>

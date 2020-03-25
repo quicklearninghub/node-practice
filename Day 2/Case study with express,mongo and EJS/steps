@@ -1,0 +1,27 @@
+Case study on Node js 
+---------------------
+Create a folder called casestudy
+
+$ npm  init -y
+
+$npm install express --save
+
+Level 1 : understanding ejs layout with express routing
+
+create a folder called views
+
+add a file called app.js and write code
+
+Understanding Jade template  
+
+create jade templates in views folder
+
+Run application
+$node app.js
+
+To continuesly run node application with watcher
+
+$ npm install nodemon -g
+
+$nodemon app.js
+

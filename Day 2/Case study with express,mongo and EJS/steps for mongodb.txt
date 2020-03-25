@@ -1,0 +1,45 @@
+Install Mongodb from mongodb website 3.x
+
+Install Robo3T from Robomongo
+
+Create folder : c:\data\db
+
+goto program files / mongodb / server/bin and run mongod process
+
+DB is running now.
+
+Open ROBO3T and click create  to create connection . Give name and click connect.
+
+db.version()
+Press Ctrl+enter to see the output in panel.
+
+db.help()
+db.stats()
+
+RC on connectionname and create database name it : murthydb
+
+Run app2.js and register as new user. Once registration is successfull, 
+come back to robo3T , RC on mongodbconnection and Refresh.
+
+Observe testdb.
+
+RC on testdb, open shell  and type
+
+db.getCollectionNames()
+observe : users 
+
+ALso expand collections and observe users
+RC on users --> view documents - expand and observe data and PK
+
+or type : db.getCollection('users').find({})
+
+You can insert/update/drop..... from here
+
+
+
+
+
+
+
+
+

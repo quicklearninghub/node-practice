@@ -1,0 +1,33 @@
+<% include layout %>  
+
+  <form method="post">
+  <div class="container" >  
+      <% if( typeof(error) !=='undefined' && error) { %>
+         <div style="background-color:red"> <%=error%> 
+         </div> 
+      <% }%>
+     
+       <table border="1">
+       <!--
+     <input type="hidden", name="_csrf", value=<%=csrfToken %> />
+     -->
+      <tr>
+        <td >User Name :</td>
+         <td><input type="text" name="email" required>
+        </td>
+      </tr>
+      <tr>
+        <td >Password : </td>
+         <td><input type="password" name="password" required>
+        </td>
+      </tr>
+      <tr>
+      <td><input type='checkbox'>Remember me</td>
+      <td>
+    <input type="submit" class="btn btn-primary" value="Login">
+      </td>
+    </tr>
+      </table>     
+  </div>      
+      </form>
+       

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background:orange;
+                font-family:verdhana;
+                color:#fff;
+                padding:40px;
+                
+            }
+            p{font-size:16px; text-align:center}
+        </style>
+    </head>
+    <body>
+        <h1 style="background:yellow;color:darkblue;text-align:center">
+            Welcome to Murthy Infotek
+        </h1>
+        
+        <% include partials/nav.ejs %>
+        
+        <p>Kindly contact us! </p>
+        Name : <%= qs.name %>
+       <br/><br/>
+        <form  id='contact-form' style="background:lightblue;color:black">
+         Name: <input type="text" name="name" value="<%=qs.name %>" ><br/>
+         Job: <input type="text" name="dept" value="<%= qs.job %>" ><br/>
+
+         <br/>
+         Fill your mail ID  below and submit to contact you.
+         <br/>
+         Email: <input type="email" name="email"><br/>
+         <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>

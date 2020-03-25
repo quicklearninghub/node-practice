@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h3>WebSockets! Open debugger by pressing F12 and console tab</h3>
+<script>
+	window.onload = function() {
+	var ws = new WebSocket('ws://localhost:8000', 'echo-protocol')
+	ws.onopen = function() {
+		console.log('Websocket connection opened');
+	};
+
+	ws.onmessage = function(data) {
+			console.log(data);
+			ws.send(JSON.stringify({ status: 'ok'}));
+  		};
+	};
+</script>
+</body>
+</html>
